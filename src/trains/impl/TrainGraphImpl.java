@@ -3,6 +3,7 @@ package trains.impl;
 import java.util.List;
 
 import trains.TrainGraph;
+import trains.exception.TrainGraphException;
 import trains.model.Edge;
 
 public class TrainGraphImpl implements TrainGraph {
@@ -12,7 +13,7 @@ public class TrainGraphImpl implements TrainGraph {
 	}
 
 	@Override
-	public Integer getDistance(Edge edge) {
+	public Integer getDistance(Edge edge) throws TrainGraphException {
 		// TODO Auto-generated method stub
 		return null;
 	}
