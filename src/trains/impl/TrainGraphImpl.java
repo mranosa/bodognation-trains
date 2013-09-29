@@ -11,4 +11,10 @@ public class TrainGraphImpl implements TrainGraph {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public Integer getDistance(Edge edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

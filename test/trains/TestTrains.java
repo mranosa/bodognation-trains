@@ -44,6 +44,8 @@ public class TestTrains {
     public void sendTrainExceptionIfNoEdgeExists() {
 		Edge nonExistingEdge = new Edge(E, D, -1);
 		
-		fail("test must fail");		
+		graph.getDistance(nonExistingEdge);
+		fail("test must fail");
+				
     }
 }
