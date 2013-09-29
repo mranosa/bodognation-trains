@@ -42,6 +42,8 @@ public class TestTrains {
 	
 	@Test
     public void sendTrainExceptionIfNoEdgeExists() {
+		Edge nonExistingEdge = new Edge(E, D, -1);
+		
 		fail("test must fail");		
     }
 }
