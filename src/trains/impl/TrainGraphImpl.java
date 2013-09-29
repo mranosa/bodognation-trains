@@ -14,7 +14,10 @@ public class TrainGraphImpl implements TrainGraph {
 
 	@Override
 	public Integer getDistance(Edge edge) throws TrainGraphException {
-		// TODO Auto-generated method stub
+		if(edge.getWeight() == -1) {
+			throw new TrainGraphException("NO SUCH ROUTE");
+		} 
+		
 		return null;
 	}
 
