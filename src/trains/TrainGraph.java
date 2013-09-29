@@ -1,10 +1,12 @@
 package trains;
 
+import java.util.List;
+
 import trains.exception.TrainGraphException;
-import trains.model.Edge;
+import trains.model.Node;
 
 public interface TrainGraph {
 
-	Integer getDistance(Edge edge) throws TrainGraphException;
+	Integer getDistance(List<Node> path) throws TrainGraphException;
 
 }

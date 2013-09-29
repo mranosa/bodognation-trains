@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import trains.exception.TrainGraphException;
 import trains.impl.TrainGraphImpl;
 import trains.model.Edge;
 import trains.model.Node;
@@ -41,14 +42,26 @@ public class TestTrains {
 	}
 	
 	@Test
-    public void sendTrainExceptionIfNoEdgeExists() {
-		Edge nonExistingEdge = new Edge(E, D, -1);
+    public void sendTrainExceptionIfNoEdgeExists() {	
+		List<Node> path = new ArrayList<Node>();
+		path.add(E);
+		path.add(D);
 		
 		try {
-			graph.getDistance(nonExistingEdge);
+			graph.getDistance(path);
 			fail("test must fail");
 		} catch (Exception e) {
 			assertEquals("NO SUCH ROUTE", e.getMessage());
 		}
+    }
+	
+	@Test
+    public void distance_ABC() throws TrainGraphException {
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		path.add(B);
+		path.add(C);
+		
+		assertEquals(new Integer(9), graph.getDistance(path));
     }
 }
