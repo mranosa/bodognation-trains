@@ -15,6 +15,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class TestTrains {
 
+	TrainGraph graph;
+	
 	@Test
 	public void thisAlwaysPasses() {
 	}
