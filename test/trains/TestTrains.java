@@ -7,6 +7,8 @@ import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import trains.model.Node;
+
 /**
  * Tests for {@link Foo}.
  * 
@@ -16,6 +18,13 @@ import org.junit.runners.JUnit4;
 public class TestTrains {
 
 	TrainGraph graph;
+	
+	// input nodes
+	Node A = new Node("A");
+	Node B = new Node("B");
+	Node C = new Node("C");
+	Node D = new Node("D");
+	Node E = new Node("E");
 	
 	@Test
 	public void thisAlwaysPasses() {
