@@ -3,7 +3,7 @@ bodognation-trains
 
 My solution for Coding Exercise Instructions - Problem 1.
 
-First time to learn about graphs! Weee! XD
+First time to learn about graphs! Weee! Java again after so long! XD
 
 PROBLEM ONE: TRAINS
 ==================
