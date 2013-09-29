@@ -44,8 +44,11 @@ public class TestTrains {
     public void sendTrainExceptionIfNoEdgeExists() {
 		Edge nonExistingEdge = new Edge(E, D, -1);
 		
-		graph.getDistance(nonExistingEdge);
-		fail("test must fail");
-				
+		try {
+			graph.getDistance(nonExistingEdge);
+			fail("test must fail");
+		} catch (Exception e) {
+			assertEquals("NO SUCH ROUTE", e.getMessage());
+		}
     }
 }
