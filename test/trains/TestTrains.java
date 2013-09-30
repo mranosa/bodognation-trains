@@ -39,8 +39,8 @@ public class TestTrains {
 	@Before
 	public void init(){
 		// just change me
-//		String edges = "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7";
-		String edges = "AB5, BC4555";
+		String edges = "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7";
+//		String edges = "AB5, BC4";
 		graph = new TrainGraphImpl(edges);
 	}
 	

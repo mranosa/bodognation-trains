@@ -41,9 +41,28 @@ public class TrainGraphImpl implements TrainGraph {
 	public Integer getDistance(List<Node> path) throws TrainGraphException {
 		if(path.isEmpty()) throw new TrainGraphException("NO SUCH ROUTE");
 		
-		Integer distance = -1;
+		Integer distance = 0;
 		
-		if(distance == -1) throw new TrainGraphException("NO SUCH ROUTE");
+		for (int i = 0; i < path.size(); i++) {
+			if(!(i == path.size() - 1)){
+				Node start = path.get(i);
+				Node end = path.get(i + 1);
+				Set<Edge> edges = graph.get(start);
+				Boolean edgeExists = false;
+				
+				for(Edge edge : edges){
+					if(edge.getStart().equals(start) && edge.getEnd().equals(end)){
+						distance += edge.getWeight();
+						edgeExists = true;
+					}
+				}
+				
+				if(!edgeExists) throw new TrainGraphException("NO SUCH ROUTE");
+			}
+		}
+		
+		if(distance == 0) throw new TrainGraphException("NO SUCH ROUTE");
+		
 		return distance;
 	}
 

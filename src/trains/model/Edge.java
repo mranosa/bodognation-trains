@@ -11,6 +11,11 @@ public class Edge {
 		this.end = end;
 		this.weight = weight;
 	}
+	
+	public Edge(Node start, Node end) {
+		this.start = start;
+		this.end = end;
+	}
 
 	public Edge(String edgeToken) {
 		String startToken = String.valueOf(edgeToken.charAt(0));
@@ -52,7 +57,6 @@ public class Edge {
 		int result = 1;
 		result = prime * result + ((end == null) ? 0 : end.hashCode());
 		result = prime * result + ((start == null) ? 0 : start.hashCode());
-		result = prime * result + ((weight == null) ? 0 : weight.hashCode());
 		return result;
 	}
 
@@ -75,12 +79,13 @@ public class Edge {
 				return false;
 		} else if (!start.equals(other.start))
 			return false;
-		if (weight == null) {
-			if (other.weight != null)
-				return false;
-		} else if (!weight.equals(other.weight))
-			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Edge [start=" + start + ", end=" + end + ", weight=" + weight
+				+ "]";
 	}
 
 }
