@@ -12,6 +12,16 @@ public class Edge {
 		this.weight = weight;
 	}
 
+	public Edge(String edgeToken) {
+		String startToken = String.valueOf(edgeToken.charAt(0));
+		String endToken = String.valueOf(edgeToken.charAt(1));
+		Integer weight = Integer.parseInt(edgeToken.substring(2, edgeToken.length()));
+		
+		this.start = new Node(startToken);
+		this.end = new Node(endToken);
+		this.weight = weight;
+	}
+
 	public Node getStart() {
 		return start;
 	}

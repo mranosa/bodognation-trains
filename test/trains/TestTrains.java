@@ -38,12 +38,10 @@ public class TestTrains {
 	
 	@Before
 	public void init(){
-		//TODO generate graph
-		
-		//TODO add implementation in later in TrainGraphImpl
-		//TODO valid input should only be "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7"
-		Map<Node, Set<Edge>> graphInfo = new HashMap<Node, Set<Edge>>();
-		graph = new TrainGraphImpl(graphInfo);
+		// just change me
+//		String edges = "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7";
+		String edges = "AB5, BC4555";
+		graph = new TrainGraphImpl(edges);
 	}
 	
 	@Test
