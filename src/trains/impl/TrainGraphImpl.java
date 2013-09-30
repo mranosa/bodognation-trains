@@ -19,12 +19,12 @@ public class TrainGraphImpl implements TrainGraph {
 
 	@Override
 	public Integer getDistance(List<Node> path) throws TrainGraphException {
-		//TODO implement me
-//		if(edge.getWeight() == -1) {
-//			throw new TrainGraphException("NO SUCH ROUTE");
-//		} 
+		if(path.isEmpty()) throw new TrainGraphException("NO SUCH ROUTE");
 		
-		return null;
+		Integer distance = -1;
+		
+		if(distance == -1) throw new TrainGraphException("NO SUCH ROUTE");
+		return distance;
 	}
 
 	public Map<Node, Set<Edge>> getGraph() {

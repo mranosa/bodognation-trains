@@ -47,7 +47,32 @@ public class TestTrains {
 	}
 	
 	@Test
-    public void sendTrainExceptionIfNoEdgeExists() {	
+    public void expectionIfNoPathAdded() {	
+		List<Node> path = new ArrayList<Node>();
+		
+		try {
+			graph.getDistance(path);
+			fail("test must fail");
+		} catch (Exception e) {
+			assertEquals("NO SUCH ROUTE", e.getMessage());
+		}
+    }
+	
+	@Test
+    public void expectionIfNoPathDestination() {	
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		
+		try {
+			graph.getDistance(path);
+			fail("test must fail");
+		} catch (Exception e) {
+			assertEquals("NO SUCH ROUTE", e.getMessage());
+		}
+    }
+	
+	@Test
+    public void exceptionIfNoPathExists() {	
 		List<Node> path = new ArrayList<Node>();
 		path.add(E);
 		path.add(D);
