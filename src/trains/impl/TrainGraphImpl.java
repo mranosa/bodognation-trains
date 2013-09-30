@@ -20,9 +20,10 @@ public class TrainGraphImpl implements TrainGraph {
 		graph = new HashMap<Node, Set<Edge>>();
 		StringTokenizer tokenizer = new StringTokenizer(edges.replaceAll(" ", ""), ",");
 		
+		//consume input like "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7"
 		while (tokenizer.hasMoreTokens()) {
 			String edgeToken = tokenizer.nextToken();
-			Edge edge = new Edge(edgeToken);
+			Edge edge = new Edge(edgeToken); // consume like "AB5"
 			Node node = edge.getStart();
 			
 			if(!graph.containsKey(node)){
@@ -50,6 +51,7 @@ public class TrainGraphImpl implements TrainGraph {
 				Set<Edge> edges = graph.get(start);
 				Boolean edgeExists = false;
 				
+				// look for edge weight given the node key
 				for(Edge edge : edges){
 					if(edge.getStart().equals(start) && edge.getEnd().equals(end)){
 						distance += edge.getWeight();
@@ -57,6 +59,7 @@ public class TrainGraphImpl implements TrainGraph {
 					}
 				}
 				
+				// no edge for start and end was found
 				if(!edgeExists) throw new TrainGraphException("NO SUCH ROUTE");
 			}
 		}
