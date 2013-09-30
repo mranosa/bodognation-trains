@@ -4,10 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,14 +13,8 @@ import org.junit.runners.JUnit4;
 
 import trains.exception.TrainGraphException;
 import trains.impl.TrainGraphImpl;
-import trains.model.Edge;
 import trains.model.Node;
 
-/**
- * Tests for {@link Foo}.
- * 
- * @author user@example.com (John Doe)
- */
 @RunWith(JUnit4.class)
 public class TestTrains {
 
@@ -38,9 +29,7 @@ public class TestTrains {
 	
 	@Before
 	public void init(){
-		// just change me
 		String edges = "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7";
-//		String edges = "AB5, BC4";
 		graph = new TrainGraphImpl(edges);
 	}
 	
@@ -92,4 +81,50 @@ public class TestTrains {
 		
 		assertEquals(new Integer(9), graph.getDistance(path));
     }
+	
+	@Test
+    public void distance_AD() throws TrainGraphException {
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		path.add(D);
+		
+		assertEquals(new Integer(5), graph.getDistance(path));
+    }
+	
+	@Test
+    public void distance_ADC() throws TrainGraphException {
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		path.add(D);
+		path.add(C);
+		
+		assertEquals(new Integer(13), graph.getDistance(path));
+    }
+	
+	@Test
+    public void distance_AEBCD() throws TrainGraphException {
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		path.add(E);
+		path.add(B);
+		path.add(C);
+		path.add(D);
+		
+		assertEquals(new Integer(22), graph.getDistance(path));
+    }
+	
+	@Test
+    public void distance_AED() throws TrainGraphException {
+		List<Node> path = new ArrayList<Node>();
+		path.add(A);
+		path.add(E);
+		path.add(D);
+		
+		try {
+			graph.getDistance(path);
+			fail("test must fail");
+		} catch (Exception e) {
+			assertEquals("NO SUCH ROUTE", e.getMessage());
+		}
+    }	
 }
