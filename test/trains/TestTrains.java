@@ -4,7 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -35,10 +38,12 @@ public class TestTrains {
 	
 	@Before
 	public void init(){
-		//TODO generate edges
+		//TODO generate graph
 		
-		List<Edge> edgeList = new ArrayList<Edge>();
-		graph = new TrainGraphImpl(edgeList);
+		//TODO add implementation in later in TrainGraphImpl
+		//TODO valid input should only be "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7"
+		Map<Node, Set<Edge>> graphInfo = new HashMap<Node, Set<Edge>>();
+		graph = new TrainGraphImpl(graphInfo);
 	}
 	
 	@Test

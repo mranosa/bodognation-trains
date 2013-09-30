@@ -1,6 +1,8 @@
 package trains.impl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import trains.TrainGraph;
 import trains.exception.TrainGraphException;
@@ -9,8 +11,10 @@ import trains.model.Node;
 
 public class TrainGraphImpl implements TrainGraph {
 
-	public TrainGraphImpl(List<Edge> edgeList) {
-		// TODO Auto-generated constructor stub
+	private Map<Node, Set<Edge>> graph;
+	
+	public TrainGraphImpl(Map<Node, Set<Edge>> graph) {
+		this.graph = graph; 
 	}
 
 	@Override
@@ -21,6 +25,14 @@ public class TrainGraphImpl implements TrainGraph {
 //		} 
 		
 		return null;
+	}
+
+	public Map<Node, Set<Edge>> getGraph() {
+		return graph;
+	}
+
+	public void setGraph(Map<Node, Set<Edge>> graph) {
+		this.graph = graph;
 	}
 
 }
